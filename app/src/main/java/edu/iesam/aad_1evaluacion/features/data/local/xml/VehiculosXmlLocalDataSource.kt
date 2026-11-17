@@ -2,14 +2,17 @@ package edu.iesam.aad_1evaluacion.features.data.local.xml
 
 import android.content.Context
 import edu.iesam.aad_1evaluacion.R
+import edu.iesam.aad_1evaluacion.core.cache.AppCache
 import edu.iesam.aad_1evaluacion.core.serialization.JsonSerializer
-import edu.iesam.aad_1evaluacion.features.superheroes.domain.Vehiculo
+import edu.iesam.aad_1evaluacion.features.domain.Vehiculo
 import kotlin.collections.filterNot
 import kotlin.collections.find
 
-class VehiculosXmlLocalDaaSource(
+class VehiculosXmlLocalDataSource(
     private val context: Context,
     private val serializer: JsonSerializer<List<Vehiculo>>,
+    private val appCache: AppCache
+
 )
  {
 
@@ -38,7 +41,7 @@ class VehiculosXmlLocalDaaSource(
             return emptyList()
         }
 
-        fun findById(id: String): Vehiculo? {
+        fun findById(id: Int): Vehiculo? {
             return findAll().find { it.id == id }
         }
 

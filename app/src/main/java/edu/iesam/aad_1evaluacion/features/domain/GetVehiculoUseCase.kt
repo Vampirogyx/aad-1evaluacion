@@ -1,6 +1,5 @@
-package edu.iesam.aad_1evaluacion.features.superheroes.domain
+package edu.iesam.aad_1evaluacion.features.domain
 
-import edu.iesam.aad_1evaluacion.superheroes.domain.VehiculoRepository
 
 
 class GetVehiculoUseCase(private val vehiculoRepository: VehiculoRepository) {
